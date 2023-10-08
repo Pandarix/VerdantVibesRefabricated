@@ -10,160 +10,144 @@
             "entries": [
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "1"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "1"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "1"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "1"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "2"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "2"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "2"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "2"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "3"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "3"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "3"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "3"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "4"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "4"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "4"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:dragon_tree",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "4"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
@@ -182,8 +166,8 @@
         }
       ]
     },
-    "tries": 80,
-    "xz_spread": 6,
-    "y_spread": 5
+    "tries": 32,
+    "xz_spread": 3,
+    "y_spread": 2
   }
 }

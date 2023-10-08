@@ -20,6 +20,7 @@ import net.pandarix.verdantvibes.VerdantVibes;
 import net.pandarix.verdantvibes.init.BlockInit;
 import net.pandarix.verdantvibes.worldgen.tree.decorator.TrunkIvyDecorator;
 
+import java.util.Iterator;
 import java.util.List;
 
 import static net.minecraft.world.gen.feature.TreeConfiguredFeatures.birch;
@@ -33,54 +34,136 @@ public class ModConfiguredFeatures {
     //PLANTS
     public static final RegistryKey<ConfiguredFeature<?, ?>> CANDY_TUFT_KEY = registerKey("candy_tuft");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PERIWINKLE_KEY = registerKey("periwinkle");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DRAGON_TREE_KEY = registerKey("dragon_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LOBELIA_KEY = registerKey("lobelia");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MONEY_TREE_KEY = registerKey("money_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MONSTERA_KEY = registerKey("monstera");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PARLOUR_PALM_KEY = registerKey("parlour_palm");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SNAKE_PLANT_KEY = registerKey("snake_plant");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, BIRCH_IVY_KEY, Feature.TREE, birch().decorators(ImmutableList.of(TrunkIvyDecorator.INSTANCE)).build());
 
         register(context, OAK_IVY_KEY, Feature.TREE, oak().decorators(ImmutableList.of(TrunkIvyDecorator.INSTANCE)).build());
 
+        //Candy Tuft--------------
+        DataPool.Builder<BlockState> candytuftBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                candytuftBuilder.add((BlockState)((BlockState)BlockInit.CANDY_TUFT.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, i)).with(FlowerbedBlock.FACING, direction), 1);
+            }
+        }
         register(context, CANDY_TUFT_KEY, Feature.FLOWER,
                 new RandomPatchFeatureConfig(80, 6, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(DataPool.<BlockState>builder()
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .add(BlockInit.CANDY_TUFT.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .build())), BlockPredicate.IS_AIR))
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(candytuftBuilder)), BlockPredicate.IS_AIR))
         );
 
+        //Periwinkle--------------
+        DataPool.Builder<BlockState> periwinkleBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                periwinkleBuilder.add((BlockState)((BlockState)BlockInit.PERIWINKLE.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, i)).with(FlowerbedBlock.FACING, direction), 1);
+            }
+        }
         register(context, PERIWINKLE_KEY, Feature.FLOWER,
                 new RandomPatchFeatureConfig(80, 6, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(DataPool.<BlockState>builder()
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.SOUTH).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.EAST).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .add(BlockInit.PERIWINKLE.getDefaultState().with(HorizontalFacingBlock.FACING, Direction.WEST).with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
-                                .build())), BlockPredicate.IS_AIR))
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(periwinkleBuilder)), BlockPredicate.IS_AIR))
+        );
+
+        //DragonTree--------------
+        DataPool.Builder<BlockState> dragonTreeBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                dragonTreeBuilder.add((BlockState)((BlockState)BlockInit.DRAGON_TREE.getDefaultState()).with(HorizontalFacingBlock.FACING, direction), 1);
+            }
+        }
+        register(context, DRAGON_TREE_KEY, Feature.FLOWER,
+                new RandomPatchFeatureConfig(32, 3, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(dragonTreeBuilder)), BlockPredicate.IS_AIR))
+        );
+
+        //LOBELIA--------------
+        DataPool.Builder<BlockState> lobeliaBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                lobeliaBuilder.add((BlockState)((BlockState)BlockInit.LOBELIA.getDefaultState()).with(HorizontalFacingBlock.FACING, direction), 1);
+            }
+        }
+        register(context, LOBELIA_KEY, Feature.FLOWER,
+                new RandomPatchFeatureConfig(32, 3, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(lobeliaBuilder)), BlockPredicate.IS_AIR))
+        );
+
+        //MONEY_TREE------------
+        DataPool.Builder<BlockState> moneyTreeBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                moneyTreeBuilder.add((BlockState)((BlockState)BlockInit.MONEY_TREE.getDefaultState()).with(HorizontalFacingBlock.FACING, direction), 1);
+            }
+        }
+        register(context, MONEY_TREE_KEY, Feature.FLOWER,
+                new RandomPatchFeatureConfig(16, 5, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(moneyTreeBuilder)), BlockPredicate.IS_AIR))
+        );
+
+        //MONSTERA------------
+        DataPool.Builder<BlockState> monsteraBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                monsteraBuilder.add((BlockState)((BlockState)BlockInit.MONSTERA.getDefaultState()).with(HorizontalFacingBlock.FACING, direction), 1);
+            }
+        }
+        register(context, MONSTERA_KEY, Feature.FLOWER,
+                new RandomPatchFeatureConfig(32, 5, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(monsteraBuilder)), BlockPredicate.matchingBlocks(Blocks.GRASS, Blocks.FERN, Blocks.AIR, Blocks.VINE)))
+        );
+
+        //ParlourPalm------------
+        DataPool.Builder<BlockState> parlourPalmBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                parlourPalmBuilder.add((BlockState)((BlockState)BlockInit.PARLOUR_PALM.getDefaultState()).with(HorizontalFacingBlock.FACING, direction), 1);
+            }
+        }
+        register(context, PARLOUR_PALM_KEY, Feature.FLOWER,
+                new RandomPatchFeatureConfig(32, 5, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(parlourPalmBuilder)), BlockPredicate.matchingBlocks(Blocks.GRASS, Blocks.FERN, Blocks.AIR, Blocks.VINE)))
+        );
+
+        //SnakePlant------------
+        DataPool.Builder<BlockState> snakePlantBuilder = DataPool.builder();
+        for(int i = 1; i <= 4; ++i) {
+            Iterator dir = Direction.Type.HORIZONTAL.iterator();
+
+            while(dir.hasNext()) {
+                Direction direction = (Direction)dir.next();
+                snakePlantBuilder.add((BlockState)((BlockState)BlockInit.SNAKE_PLANT.getDefaultState()).with(HorizontalFacingBlock.FACING, direction), 1);
+            }
+        }
+        register(context, SNAKE_PLANT_KEY, Feature.FLOWER,
+                new RandomPatchFeatureConfig(32, 5, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(snakePlantBuilder)), BlockPredicate.IS_AIR))
         );
     }
 

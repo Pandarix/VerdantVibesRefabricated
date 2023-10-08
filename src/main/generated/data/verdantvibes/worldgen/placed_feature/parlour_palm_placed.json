@@ -1,5 +1,5 @@
 {
-  "feature": "verdantvibes:monstera",
+  "feature": "verdantvibes:parlour_palm",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
@@ -10,7 +10,7 @@
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:biome"

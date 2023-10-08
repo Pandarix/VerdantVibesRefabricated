@@ -10,160 +10,144 @@
             "entries": [
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "1"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "1"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "1"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "1"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "2"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "2"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "2"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "2"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "3"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "3"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "3"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "3"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "north",
-                    "flower_amount": "4"
+                    "facing": "north"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "east",
-                    "flower_amount": "4"
+                    "facing": "east"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "south",
-                    "flower_amount": "4"
+                    "facing": "south"
                   }
                 },
                 "weight": 1
               },
               {
                 "data": {
-                  "Name": "verdantvibes:periwinkle",
+                  "Name": "verdantvibes:parlour_palm",
                   "Properties": {
-                    "facing": "west",
-                    "flower_amount": "4"
+                    "facing": "west"
                   }
                 },
                 "weight": 1
@@ -177,13 +161,18 @@
           "type": "minecraft:block_predicate_filter",
           "predicate": {
             "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:air"
+            "blocks": [
+              "minecraft:grass",
+              "minecraft:fern",
+              "minecraft:air",
+              "minecraft:vine"
+            ]
           }
         }
       ]
     },
-    "tries": 80,
-    "xz_spread": 6,
-    "y_spread": 5
+    "tries": 32,
+    "xz_spread": 5,
+    "y_spread": 3
   }
 }

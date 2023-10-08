@@ -28,6 +28,6 @@ public class ModWorldGenerator extends FabricDynamicRegistryProvider {
 
     public static void generateModWorldGen() {
         ModTreeGeneration.generateTrees();
-        //ModPlantGeneration.generatePlants();
+        ModPlantGeneration.generatePlants();
     }
 }
