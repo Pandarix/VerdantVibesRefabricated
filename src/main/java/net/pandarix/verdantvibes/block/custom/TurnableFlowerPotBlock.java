@@ -1,6 +1,7 @@
 package net.pandarix.verdantvibes.block.custom;
 
 import net.minecraft.advancement.Advancement;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
@@ -30,7 +31,7 @@ public class TurnableFlowerPotBlock extends FlowerPotBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if(player.isSneaking()){
             if(world.getServer() != null){
-                Advancement advancement = world.getServer().getAdvancementLoader().get(ADVANCEMENT_ID);
+                AdvancementEntry advancement = world.getServer().getAdvancementLoader().get(ADVANCEMENT_ID);
                 if(advancement != null){
                     if(player instanceof ServerPlayerEntity serverPlayer){
                         serverPlayer.getAdvancementTracker().grantCriterion(advancement,"planted_pot");
